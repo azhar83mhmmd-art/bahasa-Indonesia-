@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Pintar Latihan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="visual-feedback" class="visual-feedback hidden">
+        <i id="feedback-icon" class="fas"></i>
+    </div>
+    
+    <div class="background-anim"></div>
+
+    <div class="glass-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-brain fa-2x"></i>
+                <h1>KUIS PINTAR</h1>
+            </div>
+        </header>
+
+        <div id="welcome-screen" class="screen active">
+            <h2>Selamat Datang</h2>
+            <div class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name-input" placeholder="Nama Panggilan" autocomplete="off">
+            </div>
+            <button id="submit-name" class="btn-main" disabled>MASUK <i class="fas fa-arrow-right"></i></button>
+        </div>
+        
+        <div id="start-menu" class="screen">
+            <h3 class="welcome-text">Halo, <span id="display-username" class="highlight-text">User</span>!</h3>
+            <div class="menu-grid">
+                <button id="btn-latihan" class="btn-menu orange">
+                    <i class="fas fa-gamepad fa-2x"></i>
+                    <span>Mulai Latihan (Solo)</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-area" class="screen">
+            <div class="stats-bar">
+                <div class="stat-item yellow">
+                    <i class="fas fa-star"></i> <span id="current-score">0</span> pts
+                </div>
+            </div>
+
+            <div class="question-card">
+                <span id="q-number" class="badge">Soal 1</span>
+                <p id="q-text"></p> 
+            </div>
+
+            <div id="answer-area" class="options-grid"></div>
+
+            <div id="result-message" class="toast hidden"></div>
+        </div>
+
+        <div id="game-over" class="screen">
+            <i class="fas fa-trophy fa-4x gold-icon"></i>
+            <h2>Latihan Selesai!</h2>
+            
+            <div id="result-message-final" class="final-message"></div>
+            
+            <div class="final-score">
+                <span>Skor Kamu</span>
+                <h1 id="final-score">0</h1>
+            </div>
+            
+            <button onclick="location.reload()" class="btn-main">Latihan Lagi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
